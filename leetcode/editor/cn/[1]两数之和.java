@@ -44,9 +44,39 @@ package editor.cn;//给定一个整数数组 nums 和一个整数目标值 targe
 // 👍 11741 👎 0
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 //leetcode submit region begin(Prohibit modification and deletion)
 class _1两数之和_Solution {
+    /**
+     * 解法一：暴力
+     * @param nums
+     * @param target
+     * @return
+     */
+//    public int[] twoSum(int[] nums, int target) {
+//        for (int i = 0; i < nums.length - 1; i++) {
+//            for (int j = i + 1; j < nums.length; j++) {
+//                if (nums[i] + nums[j] == target) {
+//                    return new int[]{i, j};
+//                }
+//            }
+//        }
+//        return null;
+//    }
+
+    /**
+     * 解法二：优化，以空间换时间
+     */
     public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(target - nums[i])) {
+                return new int[]{i, map.get(target - nums[i])};
+            }
+            map.put(nums[i], i);
+        }
         return null;
     }
 }

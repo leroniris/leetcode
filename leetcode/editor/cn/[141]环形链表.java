@@ -56,6 +56,9 @@ package editor.cn;//给你一个链表的头节点 head ，判断链表中是否
 
 //leetcode submit region begin(Prohibit modification and deletion)
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Definition for singly-linked list.
  * class ListNode {
@@ -79,6 +82,11 @@ class _141环形链表_Solution {
         }
     }
 
+    /**
+     * 使用快慢指针解决
+     * @param head
+     * @return
+     */
     public boolean hasCycle(ListNode head) {
         if(head == null || head.next == null) {
             return false;
@@ -88,6 +96,7 @@ class _141环形链表_Solution {
         ListNode fast = head.next;
 
         while(slow != fast) {
+
             if(fast == null || fast.next == null) {
                 return false;
             }
@@ -98,8 +107,28 @@ class _141环形链表_Solution {
         }
 
         return true;
+    }
 
 
+    /**
+     * 使用集合解决
+     * @param head
+     * @return
+     */
+    public boolean hasCycle2(ListNode head) {
+        if(head == null || head.next == null) {
+            return false;
+        }
+
+        Set<ListNode> nodeSet = new HashSet<>();
+        while(head != null) {
+            if(!nodeSet.add(head)) {
+                return true;
+            }
+            head = head.next;
+        }
+
+        return false;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

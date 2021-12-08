@@ -1,4 +1,4 @@
-//不使用任何内建的哈希表库设计一个哈希集合（HashSet）。 
+package editor.cn;//不使用任何内建的哈希表库设计一个哈希集合（HashSet）。 
 //
 // 实现 MyHashSet 类： 
 //
@@ -43,9 +43,9 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class MyHashSet {
+class _705设计哈希集合_Solution {
 
-    public MyHashSet() {
+    public _705设计哈希集合_Solution() {
 
     }
     
@@ -58,7 +58,7 @@ class MyHashSet {
     }
     
     public boolean contains(int key) {
-
+        return false;
     }
 }
 

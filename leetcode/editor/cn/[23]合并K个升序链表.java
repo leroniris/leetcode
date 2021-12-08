@@ -79,7 +79,7 @@ class _23合并K个升序链表_Solution {
     }
 
     public ListNode mergeKLists(ListNode[] lists) {
-
+        return null;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
